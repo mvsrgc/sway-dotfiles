@@ -218,7 +218,7 @@ bar {
 }
 
 # Gaps & border
-gaps inner 8
+gaps inner 10
 default_border pixel 2
 for_window [title=".*"] border pixel 2
 
