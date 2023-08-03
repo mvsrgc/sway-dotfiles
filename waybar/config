@@ -2,9 +2,13 @@
 	"height": 35, 
 		"modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
 		"modules-center": [],
-		"modules-right": ["pulseaudio", "backlight", "network", "cpu", "memory", "battery", "clock", "tray"],
+		"modules-right": ["pulseaudio", "backlight", "network", "cpu", "memory", "battery", "clock", "sway/language", "tray"],
 		"sway/mode": {
 			"format": "<span style=\"italic\">{}</span>"
+		},
+		"sway/language": {
+			"format": "{short} ",
+			"on-click": "swaymsg input type:keyboard xkb_switch_layout next",
 		},
 		"sway/window": {
 			"max-length": 50
@@ -15,19 +19,19 @@
 		},
 		"clock": {
 			"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-			"format": "{:%d-%m  %H:%M}"
+			"format": "{:%d-%m %H:%M} "
 		},
 		"cpu": {
 			"format": "{usage}% ",
 			"tooltip": false
 		},
 		"memory": {
-			"format": "{}% "
+			"format": "{}% "
 		},
 		"backlight": {
 			// "device": "acpi_video1",
 			"format": "{percent}%  {icon}",
-			"format-icons": ["", ""]
+			"format-icons": ["", ""]
 		},
 		"battery": {
 		        "interval": 1,
@@ -50,7 +54,8 @@
 			// "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
 			"format-ethernet": "  {ipaddr}",
 			"format-linked": "  {ifname} (No IP)",
-			"format-disconnected": "Disconnected ⚠"
+			"format-disconnected": "Disconnected ⚠",
+			"on-click": "nm-applet"
 		},
 		"pulseaudio": {
 			// "scroll-step": 1, // %, can be a float

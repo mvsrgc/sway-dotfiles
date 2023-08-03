@@ -6,6 +6,10 @@ window {
 	background-color: #3B4252;
 }
 
+window button {
+	background-color: #000000;
+}
+
 #input {
 	margin: 5px;
 	border-radius: 0px;
@@ -43,4 +47,8 @@ window {
 
 #text:selected {
 	background: transparent;
+}
+
+#img {
+	background: transparent
 }

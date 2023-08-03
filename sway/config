@@ -2,6 +2,7 @@
 # ███████╗██╗    ██╗ █████╗ ██╗   ██╗
 # ██╔════╝██║    ██║██╔══██╗╚██╗ ██╔╝
 # ███████╗██║ █╗ ██║███████║ ╚████╔╝ 
+
 # ╚════██║██║███╗██║██╔══██║  ╚██╔╝  
 # ███████║╚███╔███╔╝██║  ██║   ██║   
 # ╚══════╝ ╚══╝╚══╝ ╚═╝  ╚═╝   ╚═╝  
@@ -17,9 +18,22 @@ set $up k
 set $right l
 
 # Your preferred terminal emulator
-set $term foot
+set $term kitty
 # Your preferred application launcher
-set $menu wofi --sort-order=alphabetical --show drun
+set $menu wofi --sort-order=alphabetical --show drun -I
+
+blur enable
+blur_passes 5
+blur_radius 5
+
+corner_radius 3
+
+default_dim_inactive 0.2
+
+shadows enable
+shadow_blur_radius 25
+
+layer_effects "waybar" blur enable; shadows enable; corner_radius 6
 
 ### Output configuration
 #
@@ -28,11 +42,12 @@ output * bg $HOME/.config/sway/wall.png fill
 
 # Output
 output HDMI-A-1 resolution 1920x1080 position 0,0
-output eDP-1 resolution 1920x1080 position 0,1080
+output eDP-1 resolution 1920x1080 position 1920,0
 
 ### Input configuration
 input type:keyboard {
-	xkb_layout "us"
+	xkb_layout "us,ca"
+    xkb_options "grp:alt_shift_toggle"
 }
 
 input type:touchpad {
@@ -54,6 +69,8 @@ input type:touchpad {
     bindsym $mod+Space exec $menu
 
     bindsym $mod+Escape exec swaylock
+
+    bindsym $mod+Shift+Return exec firefox
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -223,9 +240,12 @@ default_border pixel 2
 for_window [title=".*"] border pixel 2
 
 # Notification
-exec_always mako -c $HOME/.config/mako/config
+exec mako -c $HOME/.config/mako/config
+
+# exec_always nm-applet
 
 exec wl-paste -t text --watch clipman store --no-persist
+exec wl-paste -p -t text --watch clipman store -P --histpath="˜/.local/share/clipman-primary.json"
 
 # Src : https://github.com/lokesh-krishna/dotfiles/blob/master/nord-v3/config/sway/config
 ## Window decoration
