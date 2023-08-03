@@ -1,11 +1,9 @@
 base
 base-devel
-bear
 blueberry
 bluez
 bluez-utils
 brightnessctl
-brillo
 clipman
 cmake
 cups
@@ -15,16 +13,14 @@ efibootmgr
 emacs
 fd
 firefox
-foliate
 foot
+fzf
 gdb
 git
-github-cli
 gnome-tweaks
 gotop
 grim
 hplip
-i3status-rust
 imv
 jdk-openjdk
 jdtls
@@ -39,7 +35,6 @@ mako
 man-db
 man-pages
 maven
-neofetch
 neovim
 network-manager-applet
 networkmanager
@@ -50,8 +45,6 @@ pavucontrol
 pipewire-pulse
 powerline-fonts
 python-pyqt5
-racket-minimal
-ranger
 ripgrep
 slurp
 snapd
@@ -62,6 +55,7 @@ swayidle
 swaylock
 system-config-printer
 texinfo
+time
 transmission-gtk
 ttf-all-the-icons
 ttf-dejavu
