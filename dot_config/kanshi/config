@@ -1,0 +1,9 @@
+{
+  output "eDP-1" enable mode 1920x1080 position 760,1440
+  output "HDMI-A-1" enable mode 3440x1440 position 0,0
+}
+
+{
+  output "eDP-1" enable mode 1920x1080 position 1920,0
+  output "HDMI-A-1" enable mode 1920x1080 position 0,0
+}
