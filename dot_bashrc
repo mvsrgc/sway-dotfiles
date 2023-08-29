@@ -40,4 +40,6 @@ export EDITOR=nvim
 alias vi=nvim
 alias vim=nvim
 
+alias lsblk="lsblk -e 7"
+
 export PATH="$PATH:$HOME/.TinyTeX/bin/x86_64-linux"
