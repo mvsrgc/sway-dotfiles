@@ -95,8 +95,12 @@
 #language.us,
 #language.ca,
 #custom-cpugovernor {
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+}
+
+#language {
+    min-width: 3em;
 }
 
 /* Each module that should blink */

@@ -15,7 +15,8 @@ set $down j
 set $up k
 set $right l
 
-set $menu wofi --sort-order=alphabetical --show drun -I
+#set $menu wofi --sort-order=alphabetical --show drun -I
+set $menu tofi-drun | xargs swaymsg exec --
 
 # Your preferred terminal emulator
 set $term foot
@@ -39,21 +40,15 @@ output * bg $HOME/.config/sway/wall.png fill
 output HDMI-A-1 resolution 1920x1080 position 0,0
 output eDP-1 resolution 1920x1080 position 1920,0
 
-workspace 1 output HDMI-1-A
-workspace 2 output HDMI-1-A
-workspace 3 output HDMI-1-A
-workspace 4 output eDP-1
-workspace 5 output eDP-1
-
 ### Input configuration
-input type:keyboard {
+input "*" {
     xkb_layout "us,ca"
-    xkb_options "grp:alt_shift_toggle"
+    xkb_options "grp:alt_shift_toggle,caps:super,ctrl:swap_lalt_lctl"
 }
 
 input type:touchpad {
-	natural_scroll enabled
-	tap enabled
+    natural_scroll enabled
+    tap enabled
 }
 
 ### Key bindings
@@ -62,16 +57,15 @@ input type:touchpad {
 #
     # Start a terminal
     bindsym $mod+Return exec $term
+    bindsym $mod+Tab workspace back_and_forth
 
     # Kill focused window
-    bindsym $mod+Shift+q kill
+    bindsym $mod+q kill
 
     # Start your launcher
     bindsym $mod+Space exec $menu
 
     bindsym $mod+Escape exec swaylock
-
-    bindsym $mod+Shift+Return exec firefox
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -84,10 +78,9 @@ input type:touchpad {
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec nwgbar -b 2e3440
+    bindsym $mod+Shift+Escape exec nwg-bar
 
     bindsym $mod+Shift+z exec nwgdmenu -run
-    
 
 
 # Moving around:
@@ -244,6 +237,9 @@ for_window [title=".*"] border pixel 2
 # Notification
 exec mako -c $HOME/.config/mako/config
 
+# Displays
+exec_always kanshi
+
 exec_always nm-applet
 
 exec_always swayidle -w \
@@ -254,6 +250,8 @@ exec_always swayidle -w \
 
 exec wl-paste -t text --watch clipman store --no-persist
 exec wl-paste -p -t text --watch clipman store -P --histpath="˜/.local/share/clipman-primary.json"
+
+exec udiskie &
 
 # Src : https://github.com/lokesh-krishna/dotfiles/blob/master/nord-v3/config/sway/config
 ## Window decoration

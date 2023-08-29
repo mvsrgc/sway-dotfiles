@@ -1,0 +1,7 @@
+
+[Default Applications]
+application/pdf=org.pwmt.zathura.desktop
+image/jpeg=org.xfce.ristretto.desktop
+image/png=org.xfce.ristretto.desktop
+image/webp=org.xfce.ristretto.desktop
+image/gif=org.xfce.ristretto.desktop

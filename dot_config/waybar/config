@@ -13,24 +13,6 @@
 		"sway/window": {
 			"max-length": 50
 		},
-		"sway/workspaces": {
-		    "persistent_workspaces": {
-			"1": ["HDMI-1-A"],
-			"2": ["HDMI-1-A"],
-			"3": ["HDMI-1-A"],
-			"4": ["eDP-1"],
-			"5": ["eDP-1"]
-		    },
-		    "disable-scroll": true,
-		    "format": "{name}: {icon}",
-		    "format-icons": {
-			"1": "",
-			"2": "",
-			"3": "",
-			"4": "",
-			"5": "",
-		    }
-		},
 		"tray": {
 			// "icon-size": 21,
 			"spacing": 10
