@@ -1,0 +1,43 @@
+#
+# ~/.bashrc
+#
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+PS1='[\u@\h \W]\$ '
+. "$HOME/.cargo/env"
+
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+    --color=fg:#e5e9f0,bg:#2e3440,hl:#81a1c1
+    --color=fg+:#e5e9f0,bg+:#2e3440,hl+:#81a1c1
+    --color=info:#eacb8a,prompt:#bf6069,pointer:#b48dac
+    --color=marker:#a3be8b,spinner:#b48dac,header:#a3be8b'
+source /usr/share/fzf/key-bindings.bash
+source /usr/share/fzf/completion.bash
+export FZF_DEFAULT_COMMAND='fd . -H'
+export FZF_CTRL_T_COMMAND='fd . -H'
+
+alias dev="cd ~/Code"
+
+alias gfix='git add $1 && git commit --amend --no-edit && git push -f'
+
+eval "$(starship init bash)"
+
+alias k="sudo kubectl"
+
+alias zathura="swallow zathura"
+alias vlc="swallow vlc"
+
+export XDG_CURRENT_DESKTOP=sway
+export QT_QPA_PLATFORM=wayland
+
+export VISUAL=nvim
+export EDITOR=nvim
+alias vi=nvim
+alias vim=nvim
+
+export PATH="$PATH:$HOME/.TinyTeX/bin/x86_64-linux"
